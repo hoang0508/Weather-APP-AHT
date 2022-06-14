@@ -10,7 +10,6 @@ const WeatherWeekStyles = styled.div`
   grid-gap: 20px;
   .weather-week--info {
     background-color: #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 5px;
     border-radius: 3px;
     cursor: pointer;
@@ -45,6 +44,11 @@ const WeatherWeek = () => {
     setDataDetails(weatherData?.daily?.[0]);
   }, [weatherData]);
   const handleWeekDetails = (item) => {
+    const WeekBgColor = document.querySelectorAll(".weather-week--info");
+    [...WeekBgColor].forEach((item) => {
+      item.classList.add("weather-week--bg");
+    });
+
     setDataDetails(item);
   };
   if (!weatherData?.daily) return;
@@ -75,7 +79,6 @@ const WeatherWeek = () => {
                   {Math.floor(item?.temp?.min)}
                   <sup>o</sup>C
                 </span>
-                -
                 <span>
                   {Math.floor(item?.temp?.max)}
                   <sup>o</sup>C

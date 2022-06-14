@@ -37,10 +37,6 @@ const WeatherTodayStyled = styled.div`
       align-items: center;
       justify-content: center;
       gap: 0 20px;
-      .sun-icon {
-        font-size: 20px;
-        color: #f4d03f;
-      }
     }
     span {
       font-size: 20px;

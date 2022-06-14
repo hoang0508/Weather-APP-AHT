@@ -23,6 +23,7 @@ const WeatherDetailsStyle = styled.div`
     color: #000;
     font-weight: 500;
     font-size: 17px;
+}
   }
 `;
 

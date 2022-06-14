@@ -19,11 +19,6 @@ const WeatherDetailsStyle = styled.div`
     gap: 0 10px;
     margin-bottom: 10px;
   }
-  .info-name {
-    color: #000;
-    font-weight: 500;
-    font-size: 17px;
-  }
 `;
 
 const WeatherDetails = ({ data }) => {

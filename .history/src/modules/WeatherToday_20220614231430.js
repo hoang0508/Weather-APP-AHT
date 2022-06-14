@@ -37,14 +37,9 @@ const WeatherTodayStyled = styled.div`
       align-items: center;
       justify-content: center;
       gap: 0 20px;
-      .sun-icon {
-        font-size: 20px;
-        color: #f4d03f;
-      }
     }
     span {
       font-size: 20px;
-      font-weight: 400;
       text-align: center;
       display: block;
     }
@@ -76,11 +71,11 @@ const WeatherToday = () => {
       <div className="weather-info">
         <h3 className="weather-info--name">Sunsrice & Sunset</h3>
         <div className="weather-info--sun">
-          <BsFillSunsetFill className="sun-icon" />
+          <BsFillSunsetFill className="" />
           <span>{new Date(sunrise * 1000).toLocaleTimeString()}</span>
         </div>
         <div className="weather-info--sun">
-          <WiSunset className="sun-icon" />
+          <WiSunset />
           <span>{new Date(sunset * 1000).toLocaleTimeString()}</span>
         </div>
       </div>
@@ -96,7 +91,7 @@ const WeatherToday = () => {
       <div className="weather-info">
         <h3 className="weather-info--name">Visiblity</h3>
         <div className="weather-info--image">
-          <AiFillEye className="color-sun" />
+          <AiFillEye />
         </div>
         <span>{visibility}km</span>
       </div>

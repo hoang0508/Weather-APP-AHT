@@ -25,26 +25,15 @@ const WeatherTodayStyled = styled.div`
         height: 100%;
         object-fit: cover;
       }
-      .color-sun {
-        color: #f4d03f;
-      }
-      .color-wind {
-        color: #26a0da;
-      }
     }
     &--sun {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0 20px;
-      .sun-icon {
-        font-size: 20px;
-        color: #f4d03f;
-      }
     }
     span {
       font-size: 20px;
-      font-weight: 400;
       text-align: center;
       display: block;
     }
@@ -68,7 +57,7 @@ const WeatherToday = () => {
       <div className="weather-info">
         <h3 className="weather-info--name">Wind status</h3>
         <div className="weather-info--image">
-          <FaAudible className="color-wind" />
+          <FaAudible />
         </div>
         <span>{wind_speed}km/h</span>
       </div>
@@ -76,11 +65,11 @@ const WeatherToday = () => {
       <div className="weather-info">
         <h3 className="weather-info--name">Sunsrice & Sunset</h3>
         <div className="weather-info--sun">
-          <BsFillSunsetFill className="sun-icon" />
+          <BsFillSunsetFill />
           <span>{new Date(sunrise * 1000).toLocaleTimeString()}</span>
         </div>
         <div className="weather-info--sun">
-          <WiSunset className="sun-icon" />
+          <WiSunset />
           <span>{new Date(sunset * 1000).toLocaleTimeString()}</span>
         </div>
       </div>
@@ -88,7 +77,7 @@ const WeatherToday = () => {
       <div className="weather-info">
         <h3 className="weather-info--name">Humidity</h3>
         <div className="weather-info--image">
-          <WiHumidity className="color-wind" />
+          <WiHumidity />
         </div>
         <span>{humidity}%</span>
       </div>
@@ -96,7 +85,7 @@ const WeatherToday = () => {
       <div className="weather-info">
         <h3 className="weather-info--name">Visiblity</h3>
         <div className="weather-info--image">
-          <AiFillEye className="color-sun" />
+          <AiFillEye />
         </div>
         <span>{visibility}km</span>
       </div>
@@ -104,7 +93,7 @@ const WeatherToday = () => {
       <div className="weather-info">
         <h3 className="weather-info--name">Pressure</h3>
         <div className="weather-info--image">
-          <FaTemperatureHigh className="color-wind" />
+          <FaTemperatureHigh />
         </div>
         <span>{pressure} hPa</span>
       </div>

@@ -39,7 +39,6 @@ const WeatherTodayStyled = styled.div`
       gap: 0 20px;
       .sun-icon {
         font-size: 20px;
-        color: #f4d03f;
       }
     }
     span {

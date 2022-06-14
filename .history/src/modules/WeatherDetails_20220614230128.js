@@ -8,7 +8,6 @@ const WeatherDetailsStyle = styled.div`
   display: flex;
   background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 5px;
   .details-left,
   .details-right {
     width: 50%;
@@ -18,11 +17,6 @@ const WeatherDetailsStyle = styled.div`
     align-items: baseline;
     gap: 0 10px;
     margin-bottom: 10px;
-  }
-  .info-name {
-    color: #000;
-    font-weight: 500;
-    font-size: 17px;
   }
 `;
 
@@ -81,7 +75,7 @@ const WeatherDetails = ({ data }) => {
           </div>
           <div className="details-info">
             <div className="info-name">Pressure:</div>
-            <div>{data?.pressure} hPa</div>
+            <div>{data?.pressure}</div>
           </div>
         </div>
       </WeatherDetailsStyle>
