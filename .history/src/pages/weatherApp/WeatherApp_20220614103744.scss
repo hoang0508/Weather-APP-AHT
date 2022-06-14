@@ -1,0 +1,76 @@
+.weather {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15px;
+  &-app {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  &-main {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px;
+  }
+  &-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  &-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    padding: 12px;
+    transition: all 0.2s linear;
+    margin-bottom: 20px;
+    &:focus {
+      border-color: #2cccff;
+    }
+  }
+  &-content {
+    text-align: center;
+  }
+  &-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #000;
+  }
+  &-national {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  &-forecast {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 50px;
+  }
+  &-temp {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  &-image {
+    height: 150px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-menu {
+    background-color: #ccc;
+    width: 100%;
+    padding: 10px;
+  }
+}

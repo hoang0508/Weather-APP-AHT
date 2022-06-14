@@ -1,0 +1,13 @@
+.weather {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+  }
+}
