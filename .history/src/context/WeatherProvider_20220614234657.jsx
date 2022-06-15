@@ -1,6 +1,5 @@
 import { debounce } from "lodash";
 import { createContext, useContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import WeatherApi from "../apis/WeatherApi";
 
 const WeatherContext = createContext();
@@ -11,22 +10,17 @@ const WeatherProvider = ({ children, ...props }) => {
   // Fetch Data
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        let position;
-        if (query) {
-          position = await WeatherApi.GET_LOC_BY_NAME({ q: query });
-        } else {
-          position = await WeatherApi.GET_CURRENT_POSITION();
-        }
-        const response = await WeatherApi.GET({
-          lat: position.lat,
-          lon: position.lon,
-        });
-        // toast.success("Weather successfully!");
-        setWeatherData(response);
-      } catch (error) {
-        toast.error("Weather error!!");
+      let position;
+      if (query) {
+        position = await WeatherApi.GET_LOC_BY_NAME({ q: query });
+      } else {
+        position = await WeatherApi.GET_CURRENT_POSITION();
       }
+      const response = await WeatherApi.GET({
+        lat: position.lat,
+        lon: position.lon,
+      });
+      setWeatherData(response);
     };
     fetchData();
   }, [query]);

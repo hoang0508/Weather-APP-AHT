@@ -22,10 +22,10 @@ const WeatherProvider = ({ children, ...props }) => {
           lat: position.lat,
           lon: position.lon,
         });
-        // toast.success("Weather successfully!");
         setWeatherData(response);
+        toast.success("Weather successfully!");
       } catch (error) {
-        toast.error("Weather error!!");
+        toast.error(error);
       }
     };
     fetchData();

@@ -25,7 +25,7 @@ const WeatherProvider = ({ children, ...props }) => {
         // toast.success("Weather successfully!");
         setWeatherData(response);
       } catch (error) {
-        toast.error("Weather error!!");
+        toast.error("Error!!");
       }
     };
     fetchData();
