@@ -53,10 +53,12 @@ const WeatherWeek = () => {
     [...weekInfo].forEach((item) =>
       item.addEventListener("click", handleClickBg)
     );
+
     function handleClickBg(e) {
       [...weekInfo].forEach((item) =>
         item.classList.remove("weather-week--bg")
       );
+
       e.target.classList.add("weather-week--bg");
     }
   }, [weatherData]);
@@ -72,7 +74,7 @@ const WeatherWeek = () => {
           data.length > 0 &&
           data.map((item) => (
             <div
-              className={`weather-week--info`}
+              className={`weather-week--info weather-week--bg`}
               key={item?.dt}
               onClick={() => handleWeekDetails(item)}
             >

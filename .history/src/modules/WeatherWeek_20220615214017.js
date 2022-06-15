@@ -31,7 +31,6 @@ const WeatherWeekStyles = styled.div`
   }
   .weather-week--days {
     font-size: 16px;
-    pointer-events: none;
     span {
       color: #ff8008;
     }
@@ -39,7 +38,7 @@ const WeatherWeekStyles = styled.div`
   .weather-week--bg {
     width: 100%;
     height: auto;
-    background-color: RGBA(100, 149, 237, 1);
+    background-color: #2cccff;
   }
 `;
 
@@ -48,20 +47,21 @@ const WeatherWeek = () => {
   const [dataDetails, setDataDetails] = useState();
   useEffect(() => {
     setDataDetails(weatherData?.daily?.[0]);
-
+  }, [weatherData]);
+  const handleWeekDetails = (item) => {
+    setDataDetails(item);
     const weekInfo = document.querySelectorAll(".weather-week--info");
     [...weekInfo].forEach((item) =>
       item.addEventListener("click", handleClickBg)
     );
+
     function handleClickBg(e) {
       [...weekInfo].forEach((item) =>
         item.classList.remove("weather-week--bg")
       );
+
       e.target.classList.add("weather-week--bg");
     }
-  }, [weatherData]);
-  const handleWeekDetails = (item) => {
-    setDataDetails(item);
   };
   if (!weatherData?.daily) return;
   const data = weatherData?.daily;

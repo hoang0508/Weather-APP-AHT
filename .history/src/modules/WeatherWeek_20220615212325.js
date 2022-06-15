@@ -19,7 +19,6 @@ const WeatherWeekStyles = styled.div`
     display: flex;
     justify-content: center;
     height: 60px;
-    pointer-events: none;
   }
   .weather-week--temp {
     display: flex;
@@ -27,11 +26,9 @@ const WeatherWeekStyles = styled.div`
     gap: 0 10px;
     font-weight: 600;
     color: #ff8008;
-    pointer-events: none;
   }
   .weather-week--days {
     font-size: 16px;
-    pointer-events: none;
     span {
       color: #ff8008;
     }
@@ -39,26 +36,21 @@ const WeatherWeekStyles = styled.div`
   .weather-week--bg {
     width: 100%;
     height: auto;
-    background-color: RGBA(100, 149, 237, 1);
+    background-color: #2cccff;
   }
 `;
 
 const WeatherWeek = () => {
   const { weatherData } = useWeatherContext();
   const [dataDetails, setDataDetails] = useState();
+  const weekRef = useRef();
+  console.log(
+    "🚀 ~ file: WeatherWeek.js ~ line 47 ~ WeatherWeek ~ weekRef",
+    weekRef.current
+  );
   useEffect(() => {
     setDataDetails(weatherData?.daily?.[0]);
-
-    const weekInfo = document.querySelectorAll(".weather-week--info");
-    [...weekInfo].forEach((item) =>
-      item.addEventListener("click", handleClickBg)
-    );
-    function handleClickBg(e) {
-      [...weekInfo].forEach((item) =>
-        item.classList.remove("weather-week--bg")
-      );
-      e.target.classList.add("weather-week--bg");
-    }
+    // weekRef.current.style.backgroundColor = "blue";
   }, [weatherData]);
   const handleWeekDetails = (item) => {
     setDataDetails(item);
@@ -72,6 +64,7 @@ const WeatherWeek = () => {
           data.length > 0 &&
           data.map((item) => (
             <div
+              ref={weekRef}
               className={`weather-week--info`}
               key={item?.dt}
               onClick={() => handleWeekDetails(item)}

@@ -48,20 +48,21 @@ const WeatherWeek = () => {
   const [dataDetails, setDataDetails] = useState();
   useEffect(() => {
     setDataDetails(weatherData?.daily?.[0]);
-
+  }, [weatherData]);
+  const handleWeekDetails = (item) => {
+    setDataDetails(item);
     const weekInfo = document.querySelectorAll(".weather-week--info");
     [...weekInfo].forEach((item) =>
       item.addEventListener("click", handleClickBg)
     );
+
     function handleClickBg(e) {
       [...weekInfo].forEach((item) =>
         item.classList.remove("weather-week--bg")
       );
+
       e.target.classList.add("weather-week--bg");
     }
-  }, [weatherData]);
-  const handleWeekDetails = (item) => {
-    setDataDetails(item);
   };
   if (!weatherData?.daily) return;
   const data = weatherData?.daily;
