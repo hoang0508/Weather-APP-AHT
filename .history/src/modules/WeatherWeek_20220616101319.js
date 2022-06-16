@@ -72,9 +72,7 @@ const WeatherWeek = () => {
           data.length > 0 &&
           data.map((item) => (
             <div
-              className={`${
-                item?.dt === dataDetails?.dt ? "weather-week--bg" : ""
-              } weather-week--info`}
+              className={`weather-week--info `}
               key={item?.dt}
               onClick={() => handleWeekDetails(item)}
             >
